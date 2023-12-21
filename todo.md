@@ -19,9 +19,9 @@
 - https://www.centiserver.org/centrality/Communicability_Betweenness_Centrality/
 - https://www.centiserver.org/centrality/Community_Centrality/
 - https://www.centiserver.org/centrality/Coreness_Centrality/
-- https://www.centiserver.org/centrality/Eccentricity_Centrality/
+
 - https://www.centiserver.org/centrality/Entropy_Centrality/
-- https://www.centiserver.org/centrality/Heatmap_Centrality/
+- 
 - 
 
 

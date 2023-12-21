@@ -7,8 +7,8 @@ def bridgeness_centrality(network: nx.Graph) -> dict:
     Compute the Bridgeness Centrality for each node in the graph G.
     Ref: https://www.centiserver.org/centrality/Bridgeness_Centrality/
 
-             :param network: NetworkX graph
-            :return: Dictionary of nodes with computed centrality as the value
+    :param network: NetworkX graph
+    :return: Dictionary of nodes with computed centrality as the value
     """
     # Identify all bridges in the graph
     bridges = list(nx.bridges(network))
