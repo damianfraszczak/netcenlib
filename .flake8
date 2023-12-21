@@ -1,0 +1,22 @@
+[flake8]
+ignore =
+    E203,  # Whitespace before ':'
+    E266,  # Too many leading '#' for block comment
+    E501,  # Line too long
+    W503,  # Line break occurred before a binary operator
+    W504,  # Line break occurred after a binary operator
+    D100,  # Missing docstring in public module
+    D101,  # Missing docstring in public class
+    D102,  # Missing docstring in public method
+    D103,  # Missing docstring in public function
+    D104,  # Missing docstring in public package
+    D105,  # Missing docstring in magic method
+    D107,  # Missing docstring in __init__
+    D200,  # One-line docstring should fit on one line with quotes
+    D202,  # No blank lines allowed after function docstring
+    D205,  # 1 blank line required between summary line and description
+    D400,  # First line should end with a period
+    F821,  # undefined name
+max-line-length = 80
+max-complexity = 18
+select = B,C,E,F,W,T4,B9,D

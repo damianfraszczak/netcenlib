@@ -1,0 +1,8 @@
+[mypy]
+python_version = 3.8
+
+strict = True
+disallow_any_generics = False
+
+[mypy-tests.*]
+ignore_errors = True
