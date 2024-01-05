@@ -6,19 +6,19 @@
 - https://www.centiserver.org/centrality/Node_Conductance/
 - https://www.centiserver.org/centrality/Radiality_Centrality/
 - https://www.centiserver.org/centrality/Ranking-Betweenness_Centrality/
-- https://www.centiserver.org/centrality/Rumor_Centrality/
+
 - https://www.centiserver.org/centrality/Stress_Centrality/
 - https://www.centiserver.org/centrality/Bargaining_Centrality/
 - https://www.centiserver.org/centrality/Barycenter_Centrality/
 - https://www.centiserver.org/centrality/BottleNeck/
-- https://www.centiserver.org/centrality/Bridgeness/
-- https://www.centiserver.org/centrality/Bridgeness_Centrality/
+- 
+- 
 - https://www.centiserver.org/centrality/BridgeRank/
 - https://www.centiserver.org/centrality/Bridging_Centrality/
 - https://www.centiserver.org/centrality/Combining_of_Existing_Centrality_Measures/
 - https://www.centiserver.org/centrality/Communicability_Betweenness_Centrality/
 - https://www.centiserver.org/centrality/Community_Centrality/
-- https://www.centiserver.org/centrality/Coreness_Centrality/
+- 
 
 - https://www.centiserver.org/centrality/Entropy_Centrality/
 - 

@@ -2,7 +2,7 @@ import networkx as nx
 from networkx import Graph
 
 
-def heatmap_centrality(network: Graph) -> dict[str, int]:
+def coreness_centrality(network: Graph) -> dict[str, int]:
     """
     Compute the Coreness Centrality for each node in the graph G.
     Ref: https://www.centiserver.org/centrality/Coreness_Centrality/
@@ -13,7 +13,7 @@ def heatmap_centrality(network: Graph) -> dict[str, int]:
     core_numbers = nx.core_number(network)
 
     centrality = {
-        node: sum([core_numbers[n] for n in network.neighbors(node) or [0]])
+        node: sum([core_numbers[n] for n in network.neighbors(node) or [0]]) / network.degree(node)
         for node in network.nodes()}
 
     return centrality
