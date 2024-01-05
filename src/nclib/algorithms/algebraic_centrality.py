@@ -13,14 +13,11 @@ def algebraic_centrality(network, alpha=0.85, max_iter=100, tol=1.0e-6):
                 :return: Dictionary of nodes with Rumor Centrality as the value
         """
 
-    # Initialize centrality values
     centrality = {node: 1.0 / network.number_of_nodes() for node in
                   network.nodes()}
 
-    # Adjacency matrix
     A = nx.to_numpy_array(network)
 
-    # Iterative process
     for _ in range(max_iter):
         previous_centrality = centrality.copy()
 
@@ -29,7 +26,6 @@ def algebraic_centrality(network, alpha=0.85, max_iter=100, tol=1.0e-6):
                                enumerate(network.nodes()))
             centrality[node] = (1 - alpha) + alpha * neighbor_sum
 
-        # Check for convergence
         if all(abs(centrality[n] - previous_centrality[n]) < tol for n in
                network.nodes()):
             break

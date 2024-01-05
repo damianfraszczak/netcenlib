@@ -12,7 +12,5 @@ def eccentricity_centrality(network: Graph) -> dict[str, float]:
     """
     eccentricity = nx.eccentricity(network)
 
-    eccentricity_centrality = {node: 1.0 / ecc for node, ecc in
+    return {node: 1.0 / ecc for node, ecc in
                                eccentricity.items()}
-
-    return eccentricity_centrality

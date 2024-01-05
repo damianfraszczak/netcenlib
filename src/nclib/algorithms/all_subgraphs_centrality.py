@@ -4,14 +4,15 @@ from itertools import combinations
 
 def all_subgraphs_centrality(network: nx.Graph):
     """
-            Compute the All-subgraphs Centrality for each node in the graph G.
-            Ref:  https://www.centiserver.org/centrality/All-subgraphs_Centrality/
+    Compute the All-subgraphs Centrality for each node in the graph G.
+    Ref:  https://www.centiserver.org/centrality/All-subgraphs_Centrality/
 
-            :param network: NetworkX graph
-            :return: Dictionary of nodes with Rumor Centrality as the value
+    :param network: NetworkX graph
+    :return: Dictionary of nodes with Rumor Centrality as the value
     """
 
     centrality = {node: 0 for node in network.nodes()}
+
     all_nodes = list(network.nodes())
 
     for r in range(1, len(all_nodes) + 1):

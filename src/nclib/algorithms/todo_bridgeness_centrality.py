@@ -10,7 +10,6 @@ def bridgeness_centrality(network: nx.Graph) -> dict:
     :param network: NetworkX graph
     :return: Dictionary of nodes with computed centrality as the value
     """
-    # Identify all bridges in the graph
     bridges = list(nx.bridges(network))
 
     # Count the number of bridges each node is part of
