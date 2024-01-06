@@ -4,7 +4,7 @@ import numpy as np
 from nclib.common import nx_utils, nx_cached
 
 
-def mcn_centrality(network: nx.Graph) -> dict[str, float]:
+def mnc_centrality(network: nx.Graph) -> dict[str, float]:
     """
     Compute the MNC (Maximum Neighborhood Component) Centrality for each node in the graph G.
     Ref: https://www.centiserver.org/centrality/MNC_Maximum_Neighborhood_Component/

@@ -2,7 +2,7 @@ import networkx as nx
 from networkx import Graph
 
 
-def algebraic_centrality(network: Graph, alpha: float = 0.85, max_iterLint=100,
+def algebraic_centrality(network: Graph, alpha: float = 0.85, max_iter: int=100,
                          tol: float = 1.0e-6) -> dict[str, float]:
     """
     Compute the Algebraic Centrality for each node in the graph G.

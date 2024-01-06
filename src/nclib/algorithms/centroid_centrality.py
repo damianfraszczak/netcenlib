@@ -3,6 +3,7 @@ import numpy as np
 from networkx import Graph
 
 from nclib.common import nx_cached
+from nclib.constants import INFINITY
 
 
 def centroid_centrality(network: Graph) -> dict[str, int]:
@@ -37,7 +38,7 @@ def centroid_centrality(network: Graph) -> dict[str, int]:
             f_values[node, v] = gamma_values[node, v] - gamma_values[v, node]
 
     for node in nodes:
-        result = np.nan
+        result = INFINITY
         for i in nodes:
             if f_values[node, i] < result and node != i:
                 result = f_values[node, i]

@@ -5,7 +5,7 @@ from networkx import Graph
 from nclib.constants import INFINITY
 
 
-def cluster_rank(network: Graph) -> dict[str, int]:
+def cluster_rank_centrality(network: Graph) -> dict[str, int]:
     """
     Compute the ClusterRank Centrality for each node in the graph G.
     Ref: https://www.centiserver.org/centrality/ClusterRank/
