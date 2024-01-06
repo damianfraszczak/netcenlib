@@ -20,3 +20,8 @@ def single_source_shortest_path_length(network: Graph, v: Any):
 @lru_cache(maxsize=MAX_SIZE)
 def all_pairs_shortest_path_length(network: Graph):
     return nx.all_pairs_shortest_path_length(network)
+
+
+@lru_cache(maxsize=MAX_SIZE)
+def shortest_path_length(network: Graph, source: Any, target: Any):
+    return nx.shortest_path_length(network, source=source, target=target)
