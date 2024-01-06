@@ -25,18 +25,18 @@ def children_processed(tree: DiGraph, node: int, processed_nodes: List[int]) -> 
     return len(children) == 0 or all(child in processed_nodes for child in children)
 
 
-def rumor_centrality(network: Graph):
+def rumor_centrality(network: Graph)-> dict[str, float]:
     """
-        Compute the Rumor Centrality for each node in the graph G.
-        Ref: https://www.centiserver.org/centrality/Rumor_Centrality/
+    Compute the Rumor Centrality for each node in the graph G.
+    Ref: https://www.centiserver.org/centrality/Rumor_Centrality/
 
-        :param G: NetworkX graph
-        :return: Dictionary of nodes with Rumor Centrality as the value
-        """
+    :param G: NetworkX graph
+    :return: Dictionary of nodes with computed centrality as the value
+    """
     nodes = list(network)
     shuffle(nodes)
     N = len(nodes)
-    rumorCentrality = {}
+    centrality = {}
 
     for sourceNode in nodes:
         bfs_tree = nx.bfs_tree(network, sourceNode, False)
@@ -70,5 +70,5 @@ def rumor_centrality(network: Graph):
             r = r / messages_down[child]
         r = r / N
         r = float(r)
-        rumorCentrality[sourceNode] = r
-    return rumorCentrality
+        centrality[sourceNode] = r
+    return centrality

@@ -1,26 +1,25 @@
 import networkx as nx
+from networkx import Graph
 
 
-def algebraic_centrality(network, alpha=0.85, max_iter=100, tol=1.0e-6):
+def algebraic_centrality(network: Graph, alpha: float = 0.85, max_iter: int=100,
+                         tol: float = 1.0e-6) -> dict[str, float]:
     """
-                Compute the Algebraic Centrality for each node in the graph G.
-                Ref:  https://www.centiserver.org/centrality/Algebraic_Centrality/
+    Compute the Algebraic Centrality for each node in the graph G.
+    Ref:  https://www.centiserver.org/centrality/Algebraic_Centrality/
 
-                :param network: NetworkX graph
-                :param alpha: Damping factor representing the probability of continuing a random walk.
-                :param max_iter: Maximum number of iterations for the algorithm.
-                :param tol: Tolerance for convergence - the algorithm stops if changes are below this value.
-                :return: Dictionary of nodes with Rumor Centrality as the value
-        """
+    :param network: NetworkX graph
+    :param alpha: Damping factor representing the probability of continuing a random walk.
+    :param max_iter: Maximum number of iterations for the algorithm.
+    :param tol: Tolerance for convergence - the algorithm stops if changes are below this value.
+    :return: Dictionary of nodes with computed centrality as the value
+    """
 
-    # Initialize centrality values
     centrality = {node: 1.0 / network.number_of_nodes() for node in
                   network.nodes()}
 
-    # Adjacency matrix
     A = nx.to_numpy_array(network)
 
-    # Iterative process
     for _ in range(max_iter):
         previous_centrality = centrality.copy()
 
@@ -29,7 +28,6 @@ def algebraic_centrality(network, alpha=0.85, max_iter=100, tol=1.0e-6):
                                enumerate(network.nodes()))
             centrality[node] = (1 - alpha) + alpha * neighbor_sum
 
-        # Check for convergence
         if all(abs(centrality[n] - previous_centrality[n]) < tol for n in
                network.nodes()):
             break

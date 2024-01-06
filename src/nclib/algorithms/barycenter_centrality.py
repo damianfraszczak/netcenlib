@@ -14,7 +14,6 @@ def barycenter_centrality(network: Graph) -> dict[str, float]:
 
     for node in network.nodes():
         sp = dict(nx.shortest_path_length(network, source=node))
-        finite_sp = [sp[target] for target in sp if sp[target] != float('inf')]
-        centrality[node] = 1 / sum(finite_sp) if finite_sp else 0
+        centrality[node] = 1 / sum(sp) if sp else 0
 
     return centrality
