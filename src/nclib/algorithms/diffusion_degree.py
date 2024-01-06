@@ -3,7 +3,6 @@ from typing import List
 import networkx as nx
 from networkx import Graph
 
-
 def diffusion_degree(network: Graph,
                      lambda_factor: [float, List[float]] = 1) -> dict[
     str, float]:

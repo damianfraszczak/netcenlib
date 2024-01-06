@@ -1,7 +1,9 @@
 import networkx as nx
 import numpy as np
+from networkx import Graph
 
-def heatmap_centrality(network):
+
+def heatmap_centrality(network: Graph) -> dict[str, float]:
     """
     Compute the Heatmap Centrality for each node in the graph G.
     Ref: https://www.centiserver.org/centrality/Heatmap_Centrality/
@@ -10,15 +12,15 @@ def heatmap_centrality(network):
     :return: Dictionary of nodes with computed centrality as the value
     """
     closeness_centrality = nx.closeness_centrality(network)
-    node_farness = {node: 1 / closeness_centrality[node] for node in network.nodes()}
-
-    A = nx.adjacency_matrix(network).todense()
-    farness_array = np.array(list(node_farness.values()))
-    neighbor_farness = np.dot(A, farness_array)
-
-    degrees = np.array([degree for _, degree in network.degree()])
-    avg_neighbor_farness = neighbor_farness / degrees
-
-    heatmap_values = np.array(list(node_farness.values())) - avg_neighbor_farness
-
-    return dict(zip(network.nodes(), heatmap_values))
+    # 1. Calculate the farness of each node in G
+    node_farness = np.array(
+        [1 / closeness_centrality[node] for node in network.nodes()])
+    # 2. Calculate the sum of the farness of the neighbors for each node in G
+    A = nx.to_numpy_array(network)
+    neighbor_farness = A.dot(node_farness)
+    # 3. Calculate the average sum of the farness of the neighbors for each node in G
+    degrees = np.array([network.degree(node) for node in network.nodes()])
+    average_neighbor_farness = neighbor_farness / degrees
+    # 4. Calculate the Heatmap Centrality of each node in G
+    centrality = node_farness - average_neighbor_farness
+    return dict(zip(network.nodes(), centrality))

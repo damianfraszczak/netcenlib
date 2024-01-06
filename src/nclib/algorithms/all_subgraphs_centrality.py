@@ -1,14 +1,16 @@
 import networkx as nx
 from itertools import combinations
 
+from networkx import Graph
 
-def all_subgraphs_centrality(network: nx.Graph):
+
+def all_subgraphs_centrality(network: Graph) -> dict[str, float]:
     """
     Compute the All-subgraphs Centrality for each node in the graph G.
     Ref:  https://www.centiserver.org/centrality/All-subgraphs_Centrality/
 
     :param network: NetworkX graph
-    :return: Dictionary of nodes with Rumor Centrality as the value
+    :return: Dictionary of nodes with computed centrality as the value
     """
 
     centrality = {node: 0 for node in network.nodes()}

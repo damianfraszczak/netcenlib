@@ -2,7 +2,7 @@ import networkx as nx
 from networkx import Graph
 
 
-def average_distance_centrality(network: Graph) -> dict:
+def average_distance_centrality(network: Graph) -> dict[str, float]:
     """
     Compute the Average Distance Centrality for each node in the graph G.
     Ref: https://www.centiserver.org/centrality/Average_Distance/
