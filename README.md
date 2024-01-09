@@ -105,6 +105,10 @@ centrality_centroid: dict[Any, float] = compute_centrality(g, Centrality.CENTROI
 
 This method allows you not to directly specify centrality, making it easy to compute different centralities in a loop.
 
+## Contributing
+
+For contributing, refer to its [CONTRIBUTING.md](CONTRIBUTING.md) file.
+
 ## Maintainers
 
 Project maintainers are:

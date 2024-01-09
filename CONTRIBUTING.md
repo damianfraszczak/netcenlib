@@ -20,7 +20,7 @@ and you are ready to go.
 
 - Merge your PR into **`main`**
 - Update changelog in CHANGELOG.md
-- Change the version in src/rpasdt/version.py
+- Change the version in src/netcenlib/version.py
 - Commit. `git commit -m 'Release version x.y.z'`
 - Tag the commit. `git tag -a x.y.z -m 'Release version x.y.z'`
 - Push (do not forget --tags). `git push origin main --tags`
