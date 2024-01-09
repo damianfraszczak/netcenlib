@@ -29,7 +29,7 @@ with open(path.join(here, "requirements.txt"), encoding="utf-8") as f:
 
 setup(
     name="netcenlib",
-    version=find_version("netcenlib", "version.py"),
+    version=find_version("", "version.py"),
     license="MIT",
     description="Network centrality library",
     url="https://github.com/damianfraszczak/nclib",
