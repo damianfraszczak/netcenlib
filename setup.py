@@ -27,7 +27,7 @@ def find_version(*path_parts):
 
 setup(
     name="netcenlib",
-    version=find_version("src","netcenlib", "version.py"),
+    version=find_version("src", "netcenlib", "version.py"),
     license="MIT",
     description="Network centrality library",
     url="https://github.com/damianfraszczak/nclib",
@@ -57,7 +57,8 @@ setup(
             "pylint",
         ],
     },
+    package_dir={"": "src"},
     packages=find_packages(
-        exclude=["*.test"]
+        where="src"
     ),
 )

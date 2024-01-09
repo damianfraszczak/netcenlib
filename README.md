@@ -60,6 +60,13 @@ All custom implementations are provided under `netcenlib/algorithms` package.
 - Trophic Levels
 - [Vote Rank](https://www.centiserver.org/centrality/VoteRank/)
 
+## How to use
+Library can be installed using pip:
+
+```bash
+pip install netcenlib
+```
+
 ## Code usage
 
 Provided algorithms can be executed in the following ways:
