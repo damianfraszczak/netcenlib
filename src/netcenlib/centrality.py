@@ -1,30 +1,30 @@
 import networkx as nx
 from networkx import Graph
 
-from nclib.algorithms.algebraic_centrality import algebraic_centrality
-from nclib.algorithms.average_distance_centrality import \
+from netcenlib.algorithms.algebraic_centrality import algebraic_centrality
+from netcenlib.algorithms.average_distance_centrality import \
     average_distance_centrality
-from nclib.algorithms.barycenter_centrality import barycenter_centrality
-from nclib.algorithms.bottle_neck_centrality import bottle_neck_centrality
-from nclib.algorithms.centroid_centrality import centroid_centrality
-from nclib.algorithms.cluster_rank_centrality import cluster_rank_centrality
-from nclib.algorithms.coreness_centrality import coreness_centrality
-from nclib.algorithms.decay_centrality import decay_centrality
-from nclib.algorithms.diffusion_degree_centrality import \
+from netcenlib.algorithms.barycenter_centrality import barycenter_centrality
+from netcenlib.algorithms.bottle_neck_centrality import bottle_neck_centrality
+from netcenlib.algorithms.centroid_centrality import centroid_centrality
+from netcenlib.algorithms.cluster_rank_centrality import cluster_rank_centrality
+from netcenlib.algorithms.coreness_centrality import coreness_centrality
+from netcenlib.algorithms.decay_centrality import decay_centrality
+from netcenlib.algorithms.diffusion_degree_centrality import \
     diffusion_degree_centrality
-from nclib.algorithms.entropy_centrality import entropy_centrality
-from nclib.algorithms.geodestic_k_path_centrality import \
+from netcenlib.algorithms.entropy_centrality import entropy_centrality
+from netcenlib.algorithms.geodestic_k_path_centrality import \
     geodestic_k_path_centrality
-from nclib.algorithms.heatmap_centrality import heatmap_centrality
-from nclib.algorithms.leverage_centrality import leverage_centrality
-from nclib.algorithms.lin_centrality import lin_centrality
-from nclib.algorithms.mnc_centrality import mnc_centrality
-from nclib.algorithms.pdi_centrality import pdi_centrality
-from nclib.algorithms.radiality_centrality import radiality_centrality
-from nclib.algorithms.rumor_centrality import rumor_centrality
-from nclib.algorithms.semi_local_centrality import semi_local_centrality
-from nclib.algorithms.topological_centrality import topological_centrality
-from nclib.taxonomies import Centrality
+from netcenlib.algorithms.heatmap_centrality import heatmap_centrality
+from netcenlib.algorithms.leverage_centrality import leverage_centrality
+from netcenlib.algorithms.lin_centrality import lin_centrality
+from netcenlib.algorithms.mnc_centrality import mnc_centrality
+from netcenlib.algorithms.pdi_centrality import pdi_centrality
+from netcenlib.algorithms.radiality_centrality import radiality_centrality
+from netcenlib.algorithms.rumor_centrality import rumor_centrality
+from netcenlib.algorithms.semi_local_centrality import semi_local_centrality
+from netcenlib.algorithms.topological_centrality import topological_centrality
+from netcenlib.taxonomies import Centrality
 
 CENTRALITY_MAPPING = {
     Centrality.ALGEBRAIC: algebraic_centrality,
@@ -165,7 +165,7 @@ class CentralityService:
     def laplacian(self):
         return nx.laplacian_centrality(self.network)
 
-    # implementations from nclib
+    # implementations from netcenlib
     @property
     def algebraic(self):
         return algebraic_centrality(self.network)

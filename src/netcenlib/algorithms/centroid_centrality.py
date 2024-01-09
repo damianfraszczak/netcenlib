@@ -2,8 +2,8 @@ import networkx as nx
 import numpy as np
 from networkx import Graph
 
-from nclib.common import nx_cached
-from nclib.constants import INFINITY
+from netcenlib.common import nx_cached
+from netcenlib.constants import INFINITY
 
 
 def centroid_centrality(network: Graph) -> dict[str, int]:

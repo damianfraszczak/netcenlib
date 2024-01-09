@@ -14,7 +14,7 @@ these measures in the future.
 
 ## Code structure
 
-All custom implementations are provided under `nclib/algorithms` package.
+All custom implementations are provided under `netcenlib/algorithms` package.
 
 ## Implemented centrality measures:
 
@@ -70,7 +70,7 @@ Provided algorithms can be executed in the following ways:
 from typing import Any
 import networkx as nx
 from networkx import Graph
-from nclib.algorithms.algebraic_centrality import algebraic_centrality
+from netcenlib.algorithms.algebraic_centrality import algebraic_centrality
 ```
 
 - using the `CentralityService` class, which provides access to all centralities through its properties.
@@ -79,7 +79,7 @@ from nclib.algorithms.algebraic_centrality import algebraic_centrality
 from typing import Any
 import networkx as nx
 from networkx import Graph
-from nclib.centrality import CentralityService
+from netcenlib.centrality import CentralityService
 
 g: Graph = nx.karate_club_graph()
 centrality_service = CentralityService(g)
@@ -96,11 +96,10 @@ have all implementations within reach
 import networkx as nx
 from networkx import Graph
 
-from nclib.centrality import compute_centrality
-from nclib.taxonomies import Centrality
+from netcenlib.centrality import compute_centrality
+from netcenlib.taxonomies import Centrality
 
 g: Graph = nx.karate_club_graph()
-centrality_service =
 centrality_centroid: dict[Any, float] = compute_centrality(g, Centrality.CENTROID)
 ```
 

@@ -28,8 +28,8 @@ with open(path.join(here, "requirements.txt"), encoding="utf-8") as f:
 
 
 setup(
-    name="nclib",
-    version=find_version("nclib", "version.py"),
+    name="netcenlib",
+    version=find_version("netcenlib", "version.py"),
     license="MIT",
     description="Network centrality library",
     url="https://github.com/damianfraszczak/nclib",
@@ -60,6 +60,6 @@ setup(
         ],
     },
     packages=find_packages(
-        exclude=["*.test", "*.test.*", "test.*", "test", "cdlib.test", "cdlib.test.*"]
+        exclude=["*.test"]
     ),
 )

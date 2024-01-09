@@ -1,6 +1,6 @@
 import networkx as nx
 
-from nclib.common import nx_cached
+from netcenlib.common import nx_cached
 
 
 def lin_centrality(network: nx.Graph) -> dict[str, float]:

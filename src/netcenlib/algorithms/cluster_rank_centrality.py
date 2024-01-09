@@ -2,7 +2,7 @@ import networkx as nx
 import numpy as np
 from networkx import Graph
 
-from nclib.constants import INFINITY
+from netcenlib.constants import INFINITY
 
 
 def cluster_rank_centrality(network: Graph) -> dict[str, int]:
