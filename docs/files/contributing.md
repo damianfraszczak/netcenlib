@@ -9,7 +9,12 @@ This document contains instructions to help you contribute to this project.
 
 ## Local development setup
 
-We use Docker to setup the necessary environment and tools to build this project. Go to the [docker's README](docker.md) page to get instructions.
+By default venv is used to work on the project. After creating venv, install the requirements:
+
+```bash
+pip install -r requirements.txt
+```
+and you are ready to go.
 
 ### Release a version
 
@@ -33,6 +38,6 @@ Pre-commit works on staged files while commiting. To run it without a command on
 To run pre-commit hooks on all changes in the branch:
 
 1.  Sync branch with main
-1.  Run `git diff --name-only --diff-filter=MA origin/main | xargs pre-commit run --files`
+1.  Run `git diff --name-only --diff-filter=MA origin/master | xargs pre-commit run --files`
 
-For branches that are not based on `main` you might replace `origin/main` with `origin/{your_branch}`
+For branches that are not based on `master` you might replace `origin/master` with `origin/{your_branch}`

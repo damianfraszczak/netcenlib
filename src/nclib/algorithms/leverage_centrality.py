@@ -1,7 +1,4 @@
 import networkx as nx
-import numpy as np
-
-from nclib.common import nx_utils
 
 
 def leverage_centrality(network: nx.Graph) -> dict[str, float]:
