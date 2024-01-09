@@ -1,8 +1,14 @@
+import os
 import re
 
 from setuptools import setup, find_packages
-from codecs import open
-from os import path, read
+
+
+def read(*path_parts):
+    """Retrieve content of a text file."""
+    file_path = os.path.join(os.path.dirname(__file__), *path_parts)
+    with open(file_path) as file_obj:
+        return file_obj.read()
 
 
 def find_version(*path_parts):
@@ -18,18 +24,10 @@ def find_version(*path_parts):
     version = version_match.group("version")
     return version
 
-here = path.abspath(path.dirname(__file__))
-
-with open(path.join(here, "README.md"), encoding="utf-8") as f:
-    long_description = f.read()
-
-with open(path.join(here, "requirements.txt"), encoding="utf-8") as f:
-    requirements = f.read().splitlines()
-
 
 setup(
     name="netcenlib",
-    version=find_version("", "version.py"),
+    version=find_version("src","netcenlib", "version.py"),
     license="MIT",
     description="Network centrality library",
     url="https://github.com/damianfraszczak/nclib",
@@ -39,13 +37,13 @@ setup(
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
         "Topic :: Software Development :: Build Tools",
-        "License :: OSI Approved :: MIT",
+        "License :: OSI Approved :: MIT License",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
     ],
     keywords="node_importance centrality_measures centrality complex-networks",
-    install_requires=requirements,
-    long_description=long_description,
+    install_requires=read("requirements.txt").splitlines(),
+    long_description=read("README.md"),
     long_description_content_type="text/markdown",
     extras_require={
         "lint": [
