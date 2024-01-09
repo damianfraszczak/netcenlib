@@ -6,7 +6,7 @@ from typing import Any, Optional
 
 from rpasdt.gui.utils import show_error_dialog
 
-logger = logging.getLogger("nclib")
+logger = logging.getLogger("netcenlib")
 
 
 def log_error(

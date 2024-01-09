@@ -2,7 +2,7 @@ import networkx as nx
 import numpy as np
 from networkx import Graph
 
-from nclib.common import nx_cached
+from netcenlib.common import nx_cached
 
 
 def decay_centrality(network: Graph, decay_factor: float = 0.5) -> dict[str, float]:

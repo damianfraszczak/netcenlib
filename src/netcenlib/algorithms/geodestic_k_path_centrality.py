@@ -1,6 +1,6 @@
 import networkx as nx
 
-from nclib.common import nx_cached
+from netcenlib.common import nx_cached
 
 
 def geodestic_k_path_centrality(network: nx.Graph, k: int = 3) -> dict[str, float]:
