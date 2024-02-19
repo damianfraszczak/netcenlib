@@ -1,3 +1,5 @@
 networkx>=3.0
 numpy
 scipy
+pytest
+pytest-cov

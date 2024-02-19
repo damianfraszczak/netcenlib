@@ -3,6 +3,7 @@ from enum import Enum
 
 class Centrality(Enum):
     """A list of centrality algorithms."""
+
     ALGEBRAIC = "algebraic"
     AVERAGE_DISTANCE = "average_distance"
     BARYCENTER = "barycenter"
@@ -18,7 +19,6 @@ class Centrality(Enum):
     DECAY = "decay"
     DEGREE = "degree"
     DIFFUSION = "diffusion"
-    DISPERSION = "dispersion"
     EIGENVECTOR = "eigenvector"
     ENTROPY = "entropy"
     GEODESTIC = "geodestic"
@@ -43,4 +43,3 @@ class Centrality(Enum):
     SUBGRAPH = "subgraph"
     TOPOLOGICAL = "topological"
     TROPHIC_LEVELS = "trophic_levels"
-    VOTE_RANK = "vote_rank"

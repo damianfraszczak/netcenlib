@@ -1,10 +1,9 @@
 """Exception utilities."""
+
 import logging
 import sys
 import traceback
 from typing import Any, Optional
-
-from rpasdt.gui.utils import show_error_dialog
 
 logger = logging.getLogger("netcenlib")
 
@@ -41,4 +40,3 @@ def log_error(
     logger.error(error_msg, exc_info=(type, exc, exc_traceback))
 
     title = title or "Error occurred"
-    show_error_dialog(title=title, error_msg=error_msg)
