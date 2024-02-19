@@ -33,7 +33,6 @@ All custom implementations are provided under `netcenlib/algorithms` package.
 - [Decay](https://www.centiserver.org/centrality/Decay_Centrality/)
 - [Degree](https://www.centiserver.org/centrality/Degree_Centrality/)
 - [Diffusion degree](https://www.centiserver.org/centrality/Diffusion_Degree/)
-- Dispersion
 - [Eigenvector](https://www.centiserver.org/centrality/Eigenvector_Centrality/)
 - [Entropy](https://www.centiserver.org/centrality/Entropy_Centrality/)
 - [Geodestic k path](https://www.centiserver.org/centrality/Geodesic_K-Path_Centrality/)
@@ -58,7 +57,6 @@ All custom implementations are provided under `netcenlib/algorithms` package.
 - [Subgraph](https://www.centiserver.org/centrality/Subgraph_Centrality/)
 - [Topological](https://www.centiserver.org/centrality/Topological_Coefficient/)
 - Trophic Levels
-- [Vote Rank](https://www.centiserver.org/centrality/VoteRank/)
 
 ## How to use
 Library can be installed using pip:

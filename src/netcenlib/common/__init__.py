@@ -1,1 +1,1 @@
-"""Common methods utylized by the app."""
+"""Common methods utilized by the app."""

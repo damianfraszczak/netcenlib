@@ -1,4 +1,4 @@
-from functools import cache, lru_cache
+from functools import lru_cache
 from typing import Any
 
 import networkx as nx
