@@ -1,4 +1,4 @@
-name: Python CI with pre-commit
+name: Python CI
 
 on: [pull_request]
 
