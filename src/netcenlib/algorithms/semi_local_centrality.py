@@ -19,9 +19,8 @@ def semi_local_centrality(network: Graph) -> dict[str, float]:
             v_neighbors = set(nx.neighbors(network, v))
             for vv in v_neighbors:
                 vv_two_step_neighbors = set(
-                    nx.single_source_shortest_path_length(network, vv,
-                                                          cutoff=2).keys()) - {
-                                             vv}
+                    nx.single_source_shortest_path_length(network, vv, cutoff=2).keys()
+                ) - {vv}
                 sl += len(vv_two_step_neighbors)
 
         centrality[node] = sl

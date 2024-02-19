@@ -19,4 +19,3 @@ def average_distance_centrality(network: Graph) -> dict[str, float]:
         centrality[v] = sum(sp.values()) / n
 
     return centrality
-

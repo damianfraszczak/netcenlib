@@ -2,8 +2,9 @@ import networkx as nx
 from networkx import Graph
 
 
-def algebraic_centrality(network: Graph, alpha: float = 0.85, max_iter: int=100,
-                         tol: float = 1.0e-6) -> dict[str, float]:
+def algebraic_centrality(
+    network: Graph, alpha: float = 0.85, max_iter: int = 100, tol: float = 1.0e-6
+) -> dict[str, float]:
     """
     Compute the Algebraic Centrality for each node in the graph G.
     Ref:  https://www.centiserver.org/centrality/Algebraic_Centrality/
@@ -15,8 +16,7 @@ def algebraic_centrality(network: Graph, alpha: float = 0.85, max_iter: int=100,
     :return: Dictionary of nodes with computed centrality as the value
     """
 
-    centrality = {node: 1.0 / network.number_of_nodes() for node in
-                  network.nodes()}
+    centrality = {node: 1.0 / network.number_of_nodes() for node in network.nodes()}
 
     A = nx.to_numpy_array(network)
 
@@ -24,12 +24,14 @@ def algebraic_centrality(network: Graph, alpha: float = 0.85, max_iter: int=100,
         previous_centrality = centrality.copy()
 
         for i, node in enumerate(network.nodes()):
-            neighbor_sum = sum(A[i, j] * previous_centrality[n] for j, n in
-                               enumerate(network.nodes()))
+            neighbor_sum = sum(
+                A[i, j] * previous_centrality[n] for j, n in enumerate(network.nodes())
+            )
             centrality[node] = (1 - alpha) + alpha * neighbor_sum
 
-        if all(abs(centrality[n] - previous_centrality[n]) < tol for n in
-               network.nodes()):
+        if all(
+            abs(centrality[n] - previous_centrality[n]) < tol for n in network.nodes()
+        ):
             break
 
     return centrality

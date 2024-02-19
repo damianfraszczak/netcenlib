@@ -1,1 +1,1 @@
-INFINITY = float('inf')
+INFINITY = float("inf")

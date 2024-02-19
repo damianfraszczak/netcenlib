@@ -1,4 +1,3 @@
-import networkx as nx
 import numpy as np
 from networkx import Graph
 
@@ -23,11 +22,10 @@ def centroid_centrality(network: Graph) -> dict[str, int]:
     for node in nodes:
         for v in nodes:
             for w in nodes:
-                length_node_w = nx_cached.shortest_path_length(network,
-                                                               source=node,
-                                                               target=w)
-                length_v_w = nx_cached.shortest_path_length(
-                    network, source=v, target=w)
+                length_node_w = nx_cached.shortest_path_length(
+                    network, source=node, target=w
+                )
+                length_v_w = nx_cached.shortest_path_length(network, source=v, target=w)
                 if length_node_w < length_v_w:
                     gamma_values[node, v] += 1
 

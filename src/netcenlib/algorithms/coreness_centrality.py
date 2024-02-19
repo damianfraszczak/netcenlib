@@ -13,7 +13,9 @@ def coreness_centrality(network: Graph) -> dict[str, int]:
     core_numbers = nx.core_number(network)
 
     centrality = {
-        node: sum([core_numbers[n] for n in network.neighbors(node) or [0]]) / network.degree(node)
-        for node in network.nodes()}
+        node: sum([core_numbers[n] for n in network.neighbors(node) or [0]])
+        / network.degree(node)
+        for node in network.nodes()
+    }
 
     return centrality

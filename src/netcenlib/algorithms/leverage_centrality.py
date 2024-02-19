@@ -17,9 +17,11 @@ def leverage_centrality(network: nx.Graph) -> dict[str, float]:
         neighbors = list(nx.neighbors(network, node))
         node_centrality = 0
         if neighbors:
-            leverage_scores = [(nodes_degree[node] - nodes_degree[nb]) / (
-                    nodes_degree[node] + nodes_degree[nb]) for nb in
-                               neighbors]
+            leverage_scores = [
+                (nodes_degree[node] - nodes_degree[nb])
+                / (nodes_degree[node] + nodes_degree[nb])
+                for nb in neighbors
+            ]
             node_centrality = sum(leverage_scores) / len(leverage_scores)
         centrality[node] = node_centrality
 

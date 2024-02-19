@@ -19,7 +19,6 @@ def geodestic_k_path_centrality(network: nx.Graph, k: int = 3) -> dict[str, floa
 
     for v in network.nodes():
         sp = nx_cached.single_source_shortest_path_length(network, v)
-        centrality[v] = sum(
-            1 for dist in sp.values() if dist <= k and dist != 0)
+        centrality[v] = sum(1 for dist in sp.values() if dist <= k and dist != 0)
 
     return centrality

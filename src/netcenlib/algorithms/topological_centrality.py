@@ -28,8 +28,10 @@ def topological_centrality(network: Graph) -> dict[str, float]:
                     if n in node_neighbors:
                         tc += 1
 
-        centrality[node] = tc / (len(shared_nodes) * len(
-            node_neighbors)) if shared_nodes and node_neighbors else 0
-
+        centrality[node] = (
+            tc / (len(shared_nodes) * len(node_neighbors))
+            if shared_nodes and node_neighbors
+            else 0
+        )
 
     return centrality

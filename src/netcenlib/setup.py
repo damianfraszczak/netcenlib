@@ -1,8 +1,8 @@
 import re
-
-from setuptools import setup, find_packages
 from codecs import open
 from os import path, read
+
+from setuptools import find_packages, setup
 
 
 def find_version(*path_parts):
@@ -17,6 +17,7 @@ def find_version(*path_parts):
         raise RuntimeError("Unable to find version string.")
     version = version_match.group("version")
     return version
+
 
 here = path.abspath(path.dirname(__file__))
 
@@ -59,7 +60,5 @@ setup(
             "pylint",
         ],
     },
-    packages=find_packages(
-        exclude=["*.test"]
-    ),
+    packages=find_packages(exclude=["*.test"]),
 )
