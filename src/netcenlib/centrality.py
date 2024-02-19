@@ -75,6 +75,7 @@ CENTRALITY_MAPPING = {
 
 
 def compute_centrality(network, centrality: Centrality, *args, **kwargs):
+    """Compute centrality measure for a given network."""
     return CENTRALITY_MAPPING[centrality](network, *args, **kwargs)
 
 

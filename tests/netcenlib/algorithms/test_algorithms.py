@@ -128,6 +128,7 @@ def _assert_centrality(centrality, network_name, G):
 
 
 def test_algorithms():
+    """Ensure algorithms return expected results."""
     for network_name, algorithms in ALGORITHM_NETWORK_TEST_CASES.items():
         G = _load_network(network_name)
         for centrality in algorithms:
