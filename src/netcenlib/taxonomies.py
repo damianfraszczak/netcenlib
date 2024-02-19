@@ -3,6 +3,7 @@ from enum import Enum
 
 class Centrality(Enum):
     """A list of centrality algorithms."""
+
     ALGEBRAIC = "algebraic"
     AVERAGE_DISTANCE = "average_distance"
     BARYCENTER = "barycenter"

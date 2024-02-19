@@ -2,20 +2,24 @@ import networkx as nx
 from networkx import Graph
 
 from netcenlib.algorithms.algebraic_centrality import algebraic_centrality
-from netcenlib.algorithms.average_distance_centrality import \
-    average_distance_centrality
+from netcenlib.algorithms.average_distance_centrality import (
+    average_distance_centrality,
+)
 from netcenlib.algorithms.barycenter_centrality import barycenter_centrality
 from netcenlib.algorithms.bottle_neck_centrality import bottle_neck_centrality
 from netcenlib.algorithms.centroid_centrality import centroid_centrality
-from netcenlib.algorithms.cluster_rank_centrality import \
-    cluster_rank_centrality
+from netcenlib.algorithms.cluster_rank_centrality import (
+    cluster_rank_centrality,
+)
 from netcenlib.algorithms.coreness_centrality import coreness_centrality
 from netcenlib.algorithms.decay_centrality import decay_centrality
-from netcenlib.algorithms.diffusion_degree_centrality import \
-    diffusion_degree_centrality
+from netcenlib.algorithms.diffusion_degree_centrality import (
+    diffusion_degree_centrality,
+)
 from netcenlib.algorithms.entropy_centrality import entropy_centrality
-from netcenlib.algorithms.geodestic_k_path_centrality import \
-    geodestic_k_path_centrality
+from netcenlib.algorithms.geodestic_k_path_centrality import (
+    geodestic_k_path_centrality,
+)
 from netcenlib.algorithms.heatmap_centrality import heatmap_centrality
 from netcenlib.algorithms.leverage_centrality import leverage_centrality
 from netcenlib.algorithms.lin_centrality import lin_centrality
@@ -67,7 +71,6 @@ CENTRALITY_MAPPING = {
     Centrality.SUBGRAPH: nx.subgraph_centrality,
     Centrality.TOPOLOGICAL: topological_centrality,
     Centrality.TROPHIC_LEVELS: nx.trophic_levels,
-
 }
 
 

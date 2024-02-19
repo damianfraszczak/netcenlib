@@ -73,29 +73,31 @@ ALGORITHM_NETWORK_TEST_CASES = {
         Centrality.RUMOR,
         Centrality.SEMI_LOCAL,
         Centrality.TROPHIC_LEVELS,
-    ]
+    ],
 }
 
 
 def _load_network(network_name):
-    file_path = os.path.join(CURRENT_DIR,
-                             os.path.join("networks", f"{network_name}.json"))
+    file_path = os.path.join(
+        CURRENT_DIR, os.path.join("networks", f"{network_name}.json")
+    )
     return load_network_json(file_path)
 
 
 def _get_centrality_result(centrality, network_name):
-    centrality_name = centrality.name.lower().replace("centrality.",
-                                                      "")
-    file_path = os.path.join(CURRENT_DIR, "expected", network_name,
-                             f"{centrality_name}.json")
-    with open(file_path, 'r') as file:
+    centrality_name = centrality.name.lower().replace("centrality.", "")
+    file_path = os.path.join(
+        CURRENT_DIR, "expected", network_name, f"{centrality_name}.json"
+    )
+    with open(file_path, "r") as file:
         return json.load(file)
 
 
 def _convert_keys_to_strings(data):
     if isinstance(data, dict):
-        return {str(key): _convert_keys_to_strings(value) for key, value in
-                data.items()}
+        return {
+            str(key): _convert_keys_to_strings(value) for key, value in data.items()
+        }
     elif isinstance(data, list):
         return [_convert_keys_to_strings(item) for item in data]
     else:
@@ -105,13 +107,14 @@ def _convert_keys_to_strings(data):
 def _assert_dicts_with_precision(centrality, item1, item2, tol=0.0001):
     if isinstance(item1, dict) and isinstance(item2, dict):
         for key in item1:
-            assert key in item2, f"{centrality} - key {key} not found in both dictionaries"
-            _assert_dicts_with_precision(centrality, item1[key], item2[key],
-                                         tol)
+            assert (
+                key in item2
+            ), f"{centrality} - key {key} not found in both dictionaries"
+            _assert_dicts_with_precision(centrality, item1[key], item2[key], tol)
     elif isinstance(item1, (float, int)) and isinstance(item2, (float, int)):
-        assert math.isclose(item1, item2, abs_tol=tol), (
-            f"{centrality} - Value differs more than {tol}"
-        )
+        assert math.isclose(
+            item1, item2, abs_tol=tol
+        ), f"{centrality} - Value differs more than {tol}"
     else:
         assert item1 == item2, f"{centrality} - Value differs"
 
