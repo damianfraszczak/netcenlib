@@ -23,5 +23,5 @@ jobs:
     - name: Run pytest with coverage
       run: |
         pip install -r requirements.txt
-        pip install -r requirements-dev.txt
+        pip install -r requirements.dev.txt
         pytest --cov=./ --cov-report=term --cov-fail-under=80
