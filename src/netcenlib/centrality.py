@@ -86,168 +86,160 @@ class CentralityService:
 
     @property
     def degree(self):
-        return nx.degree_centrality(self.network)
+        return self.compute_centrality(Centrality.DEGREE)
 
     @property
     def closeness(self):
-        return nx.closeness_centrality(self.network)
+        return self.compute_centrality(Centrality.CLOSENESS)
 
     @property
     def betweenness(self):
-        return nx.betweenness_centrality(self.network)
+        return self.compute_centrality(Centrality.BETWEENNESS)
 
     @property
     def eigenvector(self):
-        return nx.eigenvector_centrality(self.network)
+        return self.compute_centrality(Centrality.EIGENVECTOR)
 
     @property
     def pagerank(self):
-        return nx.pagerank(self.network)
+        return self.compute_centrality(Centrality.PAGERANK)
 
     @property
     def katz(self):
-        return nx.katz_centrality(self.network)
+        return self.compute_centrality(Centrality.KATZ)
 
     @property
     def harmonic(self):
-        return nx.harmonic_centrality(self.network)
+        return self.compute_centrality(Centrality.HARMONIC)
 
     @property
     def load(self):
-        return nx.load_centrality(self.network)
+        return self.compute_centrality(Centrality.LOAD)
 
     @property
     def current_flow_closeness(self):
-        return nx.current_flow_closeness_centrality(self.network)
+        return self.compute_centrality(Centrality.CURRENT_FLOW_CLOSENESS)
 
     @property
     def current_flow_betweenness(self):
-        return nx.current_flow_betweenness_centrality(self.network)
+        return self.compute_centrality(Centrality.CURRENT_FLOW_BETWEENNESS)
 
     @property
     def subgraph(self):
-        return nx.subgraph_centrality(self.network)
+        return self.compute_centrality(Centrality.SUBGRAPH)
 
     @property
     def communicability_betweenness(self):
-        return nx.communicability_betweenness_centrality(self.network)
+        return self.compute_centrality(Centrality.COMMUNICABILITY_BETWEENNESS)
 
     @property
     def group_betweenness(self):
-        return nx.group_betweenness_centrality(self.network)
+        return self.compute_centrality(Centrality.GROUP_BETWEENNESS)
 
     @property
     def group_closeness(self):
-        return nx.group_closeness_centrality(self.network)
+        return self.compute_centrality(Centrality.GROUP_CLOSENESS)
 
     @property
     def group_degree(self):
-        return nx.group_degree_centrality(self.network)
-
-    @property
-    def vote_rank(self):
-        return nx.voterank(self.network)
-
-    @property
-    def dispersion(self):
-        return nx.dispersion(self.network)
+        return self.compute_centrality(Centrality.GROUP_DEGREE)
 
     @property
     def percolation(self):
-        return nx.percolation_centrality(self.network)
+        return self.compute_centrality(Centrality.PERCOLATION)
 
     @property
     def second_order(self):
-        return nx.second_order_centrality(self.network)
+        return self.compute_centrality(Centrality.SECOND_ORDER)
 
     @property
     def trophic_levels(self):
-        return nx.trophic_levels(self.network)
+        return self.compute_centrality(Centrality.TROPHIC_LEVELS)
 
     @property
     def laplacian(self):
-        return nx.laplacian_centrality(self.network)
+        return self.compute_centrality(Centrality.LAPLACIAN)
 
     # implementations from netcenlib
     @property
     def algebraic(self):
-        return algebraic_centrality(self.network)
+        return self.compute_centrality(Centrality.ALGEBRAIC)
 
     @property
     def average_distance(self):
-        return average_distance_centrality(self.network)
+        return self.compute_centrality(Centrality.AVERAGE_DISTANCE)
 
     @property
     def barycenter(self):
-        return barycenter_centrality(self.network)
+        return self.compute_centrality(Centrality.BARYCENTER)
 
     @property
     def bottle_neck(self):
-        return bottle_neck_centrality(self.network)
+        return self.compute_centrality(Centrality.BOTTLE_NECK)
 
     @property
     def centroid(self):
-        return centroid_centrality(self.network)
+        return self.compute_centrality(Centrality.CENTROID)
 
     @property
     def cluster_rank(self):
-        return cluster_rank_centrality(self.network)
+        return self.compute_centrality(Centrality.CLUSTER_RANK)
 
     @property
     def coreness(self):
-        return coreness_centrality(self.network)
+        return self.compute_centrality(Centrality.CORENESS)
 
     @property
     def decay(self):
-        return decay_centrality(self.network)
+        return self.compute_centrality(Centrality.DECAY)
 
     @property
     def diffusion(self):
-        return diffusion_degree_centrality(self.network)
+        return self.compute_centrality(Centrality.DIFFUSION)
 
     @property
     def entropy(self):
-        return entropy_centrality(self.network)
+        return self.compute_centrality(Centrality.ENTROPY)
 
     @property
     def geodestic(self):
-        return geodestic_k_path_centrality(self.network)
+        return self.compute_centrality(Centrality.GEODESTIC)
 
     @property
     def heatmap(self):
-        return heatmap_centrality(self.network)
+        return self.compute_centrality(Centrality.HEATMAP)
 
     @property
     def leverage(self):
-        return leverage_centrality(self.network)
+        return self.compute_centrality(Centrality.LEVERAGE)
 
     @property
     def lin(self):
-        return lin_centrality(self.network)
+        return self.compute_centrality(Centrality.LIN)
 
     @property
     def mnc(self):
-        return mnc_centrality(self.network)
+        return self.compute_centrality(Centrality.MNC)
 
     @property
     def pdi(self):
-        return pdi_centrality(self.network)
+        return self.compute_centrality(Centrality.PDI)
 
     @property
     def radiality(self):
-        return radiality_centrality(self.network)
+        return self.compute_centrality(Centrality.RADIALITY)
 
     @property
     def rumor(self):
-        return rumor_centrality(self.network)
+        return self.compute_centrality(Centrality.RUMOR)
 
     @property
     def semi_local(self):
-        return semi_local_centrality(self.network)
+        return self.compute_centrality(Centrality.SEMI_LOCAL)
 
     @property
     def topological(self):
-        return topological_centrality(self.network)
+        return self.compute_centrality(Centrality.TOPOLOGICAL)
 
     def compute_centrality(self, centrality: Centrality, *args, **kwargs):
         return compute_centrality(self.network, centrality, *args, **kwargs)

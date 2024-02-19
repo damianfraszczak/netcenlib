@@ -59,6 +59,7 @@ setup(
             "mypy",
             "pylint",
         ],
+        "test": ["pytest", "pytest-cov", "pytest-mock", "pytest-xdist"],
     },
     packages=find_packages(exclude=["*.test"]),
 )
