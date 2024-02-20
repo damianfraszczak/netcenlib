@@ -1,3 +1,4 @@
+"""Centrality measures for networks."""
 import networkx as nx
 from networkx import Graph
 
