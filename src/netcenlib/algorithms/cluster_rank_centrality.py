@@ -16,7 +16,7 @@ def cluster_rank_centrality(network: Graph) -> dict[str, int]:
     centrality = {}
 
     if network.is_directed():
-        cc = nx.clustering(network, nodes=None, weight=None, mode='dot')
+        cc = nx.clustering(network, nodes=None, weight=None, mode="dot")
         mode = "out"
     else:
         cc = nx.clustering(network, nodes=None, weight=None)
@@ -31,9 +31,9 @@ def cluster_rank_centrality(network: Graph) -> dict[str, int]:
             else:
                 neighbors = set(nx.neighbors(network, node))
 
-            cr = sum(
-                network.degree(nb, weight=None) for nb in neighbors) + len(
-                neighbors)
+            cr = sum(network.degree(nb, weight=None) for nb in neighbors) + len(
+                neighbors
+            )
             centrality[node] = cr * cc[node]
 
     return centrality

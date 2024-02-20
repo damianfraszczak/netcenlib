@@ -1,7 +1,7 @@
 import os
 import re
 
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
 
 def read(*path_parts):
@@ -58,7 +58,5 @@ setup(
         ],
     },
     package_dir={"": "src"},
-    packages=find_packages(
-        where="src"
-    ),
+    packages=find_packages(where="src"),
 )

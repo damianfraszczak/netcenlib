@@ -15,7 +15,9 @@ def bottle_neck_centrality(graph: Graph) -> dict[str, float]:
     for v in graph.nodes():
         all_paths = {
             target: list(nx.all_shortest_paths(graph, source=v, target=target))
-            for target in graph.nodes() if target != v}
+            for target in graph.nodes()
+            if target != v
+        }
         path_counts = {}
         for target, paths in all_paths.items():
             for path in paths:

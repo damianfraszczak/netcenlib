@@ -4,6 +4,7 @@ from networkx import Graph
 from netcenlib.common import nx_cached
 from netcenlib.constants import INFINITY
 
+
 def radiality_centrality(network: Graph) -> dict[str, float]:
     """
     Compute the Radiality Centrality for each node in the graph G.

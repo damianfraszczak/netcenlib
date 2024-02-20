@@ -1,5 +1,3 @@
-import networkx as nx
-import numpy as np
 from networkx import Graph
 
 from netcenlib.common import nx_cached
@@ -21,7 +19,7 @@ def decay_centrality(network: Graph, decay_factor: float = 0.5) -> dict[str, flo
 
     for node in network.nodes():
         sp = dict(nx_cached.single_source_shortest_path_length(network, node))
-        decayed_distances = [decay_factor ** d for d in sp.values()]
+        decayed_distances = [decay_factor**d for d in sp.values()]
         centrality[node] = sum(decayed_distances)
 
     return centrality
