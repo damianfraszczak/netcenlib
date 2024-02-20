@@ -1,28 +1,28 @@
-# Bug Report
+---
+name: Bug Report
+about: Create a report to help us improve the network centrality library
+title: "[BUG]"
+labels: bug
+assignees: ''
 
-## Description
+---
 
-A brief description of the issue...
+**Describe the Bug**
+A clear and concise description of what the bug is.
 
-## Steps to Reproduce
+**Steps to Reproduce**
+Steps to reproduce the behavior:
+1. Go to '...'
+2. Use function '....'
+3. See error
 
-1. Steps to reproduce the issue
-2. ...
+**Expected Behavior**
+A clear and concise description of what you expected to happen.
 
-## Expected Behavior
+**Environment:**
+ - OS: [e.g. UBUNTU 20.04]
+ - Python Version: [e.g. 3.8]
+ - Library Version: [e.g. 1.2.3]
 
-Describe what you expected to happen after following the steps above.
-
-## Actual Behavior
-
-Describe what actually happens after you follow the steps to reproduce.
-
-## Environment
-
-- Library version: [version]
-- Python version: [version of Python]
-- Operating System and version: [e.g., Windows 10, Ubuntu 18.04]
-
-## Additional Information
-
-Here, you can add any additional information that might be helpful, such as error logs, screenshots, etc.
+**Additional Context**
+Add any other context about the problem here.
