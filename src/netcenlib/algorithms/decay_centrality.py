@@ -6,6 +6,7 @@ from netcenlib.common import nx_cached
 def decay_centrality(network: Graph, decay_factor: float = 0.5) -> dict[str, float]:
     """
     Compute the Decay Centrality for each node in the graph G.
+
     Ref: https://www.centiserver.org/centrality/Decay_Centrality/
 
     :param network: NetworkX graph

@@ -5,6 +5,7 @@ from networkx import Graph
 def coreness_centrality(network: Graph) -> dict[str, int]:
     """
     Compute the Coreness Centrality for each node in the graph G.
+
     Ref: https://www.centiserver.org/centrality/Coreness_Centrality/
 
     :param network: NetworkX graph

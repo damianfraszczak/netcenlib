@@ -6,6 +6,7 @@ from netcenlib.common import nx_cached, nx_utils
 def pdi_centrality(network: nx.Graph) -> dict[str, float]:
     """
     Compute the Pairwise Disconnectivity Index for each node in the graph G.
+
     Ref: https://www.centiserver.org/centrality/Pairwise_Disconnectivity_Index/
 
     :param network: NetworkX graph

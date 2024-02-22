@@ -1,57 +1,89 @@
 import pytest
-from networkx import (
-    Graph,
+from networkx import Graph
+
+from netcenlib import Centrality, compute_centrality
+from netcenlib.algorithms import (
+    algebraic_centrality,
+    average_distance_centrality,
+    barycenter_centrality,
     betweenness_centrality,
+    bottle_neck_centrality,
+    centroid_centrality,
     closeness_centrality,
+    cluster_rank_centrality,
     communicability_betweenness_centrality,
+    coreness_centrality,
     current_flow_betweenness_centrality,
     current_flow_closeness_centrality,
+    decay_centrality,
     degree_centrality,
+    diffusion_degree_centrality,
     eigenvector_centrality,
+    entropy_centrality,
+    geodestic_k_path_centrality,
     group_betweenness_centrality,
     group_closeness_centrality,
     group_degree_centrality,
     harmonic_centrality,
+    heatmap_centrality,
+    hubbell_centrality,
     katz_centrality,
     laplacian_centrality,
-    load_centrality,
-    pagerank,
+    leverage_centrality,
+    lin_centrality,
+    mnc_centrality,
+    pdi_centrality,
     percolation_centrality,
+    radiality_centrality,
+    rumor_centrality,
     second_order_centrality,
+    semi_local_centrality,
     subgraph_centrality,
-    trophic_levels,
+    topological_centrality,
 )
 
-from netcenlib.algorithms.algebraic_centrality import algebraic_centrality
-from netcenlib.algorithms.average_distance_centrality import (
-    average_distance_centrality,
-)
-from netcenlib.algorithms.barycenter_centrality import barycenter_centrality
-from netcenlib.algorithms.bottle_neck_centrality import bottle_neck_centrality
-from netcenlib.algorithms.centroid_centrality import centroid_centrality
-from netcenlib.algorithms.cluster_rank_centrality import (
-    cluster_rank_centrality,
-)
-from netcenlib.algorithms.coreness_centrality import coreness_centrality
-from netcenlib.algorithms.decay_centrality import decay_centrality
-from netcenlib.algorithms.diffusion_degree_centrality import (
-    diffusion_degree_centrality,
-)
-from netcenlib.algorithms.entropy_centrality import entropy_centrality
-from netcenlib.algorithms.geodestic_k_path_centrality import (
-    geodestic_k_path_centrality,
-)
-from netcenlib.algorithms.heatmap_centrality import heatmap_centrality
-from netcenlib.algorithms.leverage_centrality import leverage_centrality
-from netcenlib.algorithms.lin_centrality import lin_centrality
-from netcenlib.algorithms.mnc_centrality import mnc_centrality
-from netcenlib.algorithms.pdi_centrality import pdi_centrality
-from netcenlib.algorithms.radiality_centrality import radiality_centrality
-from netcenlib.algorithms.rumor_centrality import rumor_centrality
-from netcenlib.algorithms.semi_local_centrality import semi_local_centrality
-from netcenlib.algorithms.topological_centrality import topological_centrality
-from netcenlib.centrality import CENTRALITY_MAPPING, CentralityService
-from netcenlib.taxonomies import Centrality
+CENTRALITY_MAPPING = {
+    Centrality.ALGEBRAIC: algebraic_centrality.__name__,
+    Centrality.AVERAGE_DISTANCE: average_distance_centrality.__name__,
+    Centrality.BARYCENTER: barycenter_centrality.__name__,
+    Centrality.BETWEENNESS: betweenness_centrality.__name__,
+    Centrality.BOTTLE_NECK: bottle_neck_centrality.__name__,
+    Centrality.CENTROID: centroid_centrality.__name__,
+    Centrality.CLOSENESS: closeness_centrality.__name__,
+    Centrality.CLUSTER_RANK: cluster_rank_centrality.__name__,
+    Centrality.COMMUNICABILITY_BETWEENNESS: communicability_betweenness_centrality.__name__,
+    Centrality.CORENESS: coreness_centrality.__name__,
+    Centrality.CURRENT_FLOW_BETWEENNESS: current_flow_betweenness_centrality.__name__,
+    Centrality.CURRENT_FLOW_CLOSENESS: current_flow_closeness_centrality.__name__,
+    Centrality.DECAY: decay_centrality.__name__,
+    Centrality.DEGREE: degree_centrality.__name__,
+    Centrality.DIFFUSION_DEGREE: diffusion_degree_centrality.__name__,
+    Centrality.EIGENVECTOR: eigenvector_centrality.__name__,
+    Centrality.ENTROPY: entropy_centrality.__name__,
+    Centrality.GEODESTIC_K_PATH: geodestic_k_path_centrality.__name__,
+    Centrality.GROUP_BETWEENNESS: group_betweenness_centrality.__name__,
+    Centrality.GROUP_CLOSENESS: group_closeness_centrality.__name__,
+    Centrality.GROUP_DEGREE: group_degree_centrality.__name__,
+    Centrality.HARMONIC: harmonic_centrality.__name__,
+    Centrality.HUBBELL: hubbell_centrality.__name__,
+    Centrality.HEATMAP: heatmap_centrality.__name__,
+    Centrality.KATZ: katz_centrality.__name__,
+    Centrality.LAPLACIAN: laplacian_centrality.__name__,
+    Centrality.LEVERAGE: leverage_centrality.__name__,
+    Centrality.LIN: lin_centrality.__name__,
+    Centrality.LOAD: "load_centrality",  # imported with different name
+    Centrality.MNC: mnc_centrality.__name__,
+    Centrality.PAGERANK: "pagerank_centrality",  # imported with different name
+    Centrality.PDI: pdi_centrality.__name__,
+    Centrality.PERCOLATION: percolation_centrality.__name__,
+    Centrality.RADIALITY: radiality_centrality.__name__,
+    Centrality.RUMOR: rumor_centrality.__name__,
+    Centrality.SECOND_ORDER: second_order_centrality.__name__,
+    Centrality.SEMI_LOCAL: semi_local_centrality.__name__,
+    Centrality.SUBGRAPH: subgraph_centrality.__name__,
+    Centrality.TOPOLOGICAL: topological_centrality.__name__,
+    Centrality.TROPHIC_LEVELS: "trophic_levels_centrality",  # imported with different name
+}
 
 
 @pytest.fixture
@@ -68,79 +100,15 @@ def example_graph():
     return Graph()
 
 
-@pytest.fixture
-def centrality_service(example_graph):
-    """Return a CentralityService instance."""
-    return CentralityService(example_graph)
-
-
-@pytest.mark.parametrize("centrality_type", Centrality)
-def test_centrality_methods(
-    centrality_service, mock_compute_centrality, centrality_type
-):
-    """Ensure that the correct method is called for each centrality type."""
-    method_name = centrality_type.name.lower()
-
-    result = getattr(centrality_service, method_name)
-
-    mock_compute_centrality.assert_called_with(
-        centrality_service.network, centrality_type
-    )
-    assert result == "mocked_result"
-    mock_compute_centrality.reset_mock()
-
-
-def test_centrality_mapping():
+def test_compute_centrality(mocker):
     """Ensure correct mapping between Centrality enum and functions."""
-    assert CENTRALITY_MAPPING[Centrality.ALGEBRAIC] == algebraic_centrality
-    assert (
-        CENTRALITY_MAPPING[Centrality.AVERAGE_DISTANCE] == average_distance_centrality
-    )
-    assert CENTRALITY_MAPPING[Centrality.BARYCENTER] == barycenter_centrality
-    assert CENTRALITY_MAPPING[Centrality.BOTTLE_NECK] == bottle_neck_centrality
-    assert CENTRALITY_MAPPING[Centrality.CENTROID] == centroid_centrality
-    assert CENTRALITY_MAPPING[Centrality.CLUSTER_RANK] == cluster_rank_centrality
-    assert CENTRALITY_MAPPING[Centrality.CORENESS] == coreness_centrality
-    assert CENTRALITY_MAPPING[Centrality.DECAY] == decay_centrality
-    assert CENTRALITY_MAPPING[Centrality.DIFFUSION] == diffusion_degree_centrality
-    assert CENTRALITY_MAPPING[Centrality.ENTROPY] == entropy_centrality
-    assert CENTRALITY_MAPPING[Centrality.GEODESTIC] == geodestic_k_path_centrality
-    assert CENTRALITY_MAPPING[Centrality.HEATMAP] == heatmap_centrality
-    assert CENTRALITY_MAPPING[Centrality.LEVERAGE] == leverage_centrality
-    assert CENTRALITY_MAPPING[Centrality.LIN] == lin_centrality
-    assert CENTRALITY_MAPPING[Centrality.MNC] == mnc_centrality
-    assert CENTRALITY_MAPPING[Centrality.PDI] == pdi_centrality
-    assert CENTRALITY_MAPPING[Centrality.RADIALITY] == radiality_centrality
-    assert CENTRALITY_MAPPING[Centrality.RUMOR] == rumor_centrality
-    assert CENTRALITY_MAPPING[Centrality.SEMI_LOCAL] == semi_local_centrality
-    assert CENTRALITY_MAPPING[Centrality.TOPOLOGICAL] == topological_centrality
-    assert CENTRALITY_MAPPING[Centrality.BETWEENNESS] == betweenness_centrality
-    assert CENTRALITY_MAPPING[Centrality.CLOSENESS] == closeness_centrality
-    assert CENTRALITY_MAPPING[Centrality.DEGREE] == degree_centrality
-    assert CENTRALITY_MAPPING[Centrality.EIGENVECTOR] == eigenvector_centrality
-    assert CENTRALITY_MAPPING[Centrality.PAGERANK] == pagerank
-    assert CENTRALITY_MAPPING[Centrality.KATZ] == katz_centrality
-    assert CENTRALITY_MAPPING[Centrality.HARMONIC] == harmonic_centrality
-    assert CENTRALITY_MAPPING[Centrality.LOAD] == load_centrality
-    assert (
-        CENTRALITY_MAPPING[Centrality.CURRENT_FLOW_CLOSENESS]
-        == current_flow_closeness_centrality
-    )
-    assert (
-        CENTRALITY_MAPPING[Centrality.CURRENT_FLOW_BETWEENNESS]
-        == current_flow_betweenness_centrality
-    )
-    assert CENTRALITY_MAPPING[Centrality.SUBGRAPH] == subgraph_centrality
-    assert (
-        CENTRALITY_MAPPING[Centrality.COMMUNICABILITY_BETWEENNESS]
-        == communicability_betweenness_centrality
-    )
-    assert (
-        CENTRALITY_MAPPING[Centrality.GROUP_BETWEENNESS] == group_betweenness_centrality
-    )
-    assert CENTRALITY_MAPPING[Centrality.GROUP_CLOSENESS] == group_closeness_centrality
-    assert CENTRALITY_MAPPING[Centrality.GROUP_DEGREE] == group_degree_centrality
-    assert CENTRALITY_MAPPING[Centrality.PERCOLATION] == percolation_centrality
-    assert CENTRALITY_MAPPING[Centrality.SECOND_ORDER] == second_order_centrality
-    assert CENTRALITY_MAPPING[Centrality.TROPHIC_LEVELS] == trophic_levels
-    assert CENTRALITY_MAPPING[Centrality.LAPLACIAN] == laplacian_centrality
+    for centrality in Centrality:
+        graph = Graph()
+        mock = mocker.patch(
+            f"netcenlib.algorithms.{CENTRALITY_MAPPING[centrality]}",
+            return_value="mocked_result",
+        )
+
+        compute_centrality(graph, centrality)
+
+        mock.assert_called_once_with(graph), f"Failed assert for {centrality}"

@@ -14,8 +14,7 @@ these measures in the future.
 
 ## Code structure
 
-All custom implementations are provided under `netcenlib/algorithms` package.
-
+All custom implementations are provided under `netcenlib/algorithms` package. Each centrality measure is implemented in a separate file, named after the measure itself. Correspondingly, each file contains a function, named identically to the file, which calculates the centrality measure. This function accepts a NetworkX graph as input (and other params if applicable) and returns a dictionary, mapping nodes to their centrality values. Ultimately, every custom implementation is made available through the `netcenlib/algorithms` package.
 ## Implemented centrality measures:
 
 - [Algebraic](https://www.centiserver.org/centrality/Algebraic_Centrality/)
@@ -36,12 +35,13 @@ All custom implementations are provided under `netcenlib/algorithms` package.
 - [Eigenvector](https://www.centiserver.org/centrality/Eigenvector_Centrality/)
 - [Entropy](https://www.centiserver.org/centrality/Entropy_Centrality/)
 - [Geodestic k path](https://www.centiserver.org/centrality/Geodesic_K-Path_Centrality/)
-- [Group Betweenness](https://www.centiserver.org/centrality/Group_Betweenness_Centrality/)
-- Group Closeness
-- Group Degree
+- [Group Betweenness Centrality](https://www.centiserver.org/centrality/Group_Betweenness_Centrality/) - `netcenlib.algorithms.group_betweenness_centrality`
+- [Group Closeness](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.centrality.group_closeness_centrality.html) - `netcenlib.algorithms.group_closeness_centrality`
+- [Group Degree](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.centrality.group_degree_centrality.html) - `netcenlib.algorithms.group_degree_centrality`
 - [Harmonic](https://www.centiserver.org/centrality/Harmonic_Centrality/)
 - [Heatmap](https://www.centiserver.org/centrality/Heatmap_Centrality/)
 - [Katz](https://www.centiserver.org/centrality/Katz_Centrality/)
+- [Hubbell](https://www.centiserver.org/centrality/Hubbell_Centrality/)
 - [Laplacian](https://www.centiserver.org/centrality/Laplacian_Centrality/)
 - [Leverage](https://www.centiserver.org/centrality/Leverage_Centrality/)
 - [Lin](https://www.centiserver.org/centrality/Lin_Centrality/)
@@ -56,7 +56,7 @@ All custom implementations are provided under `netcenlib/algorithms` package.
 - [Semi Local](https://www.centiserver.org/centrality/Semi_Local_Centrality/)
 - [Subgraph](https://www.centiserver.org/centrality/Subgraph_Centrality/)
 - [Topological](https://www.centiserver.org/centrality/Topological_Coefficient/)
-- Trophic Levels
+- [Trophic Levels](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.centrality.trophic_levels.html) - `netcenlib.algorithms.trophic_levels_centrality`
 
 ## How to use
 Library can be installed using pip:
@@ -69,35 +69,34 @@ pip install netcenlib
 
 Provided algorithms can be executed in the following ways:
 
-- by importing and using specific method:
+- by invoking a specific function from `netcenlib.algorithms` package, which computes a given centrality measure for a
+  given graph.
 
 ```python
-from typing import Any
 import networkx as nx
-from networkx import Graph
-from netcenlib.algorithms.algebraic_centrality import algebraic_centrality
+import netcenlib as ncl
+
+# Create a graph
+G = nx.karate_club_graph()
+
+# Compute degree centrality
+degree_centrality = ncl.degree_centrality(G)
+
+# Compute betweenness centrality
+betweenness_centrality = ncl.betweenness_centrality(G)
+
+# Compute closeness centrality
+closeness_centrality = ncl.closeness_centrality(G)
+
+# Compute eigenvector centrality
+eigenvector_centrality = ncl.eigenvector_centrality(G)
 ```
-
-- using the `CentralityService` class, which provides access to all centralities through its properties.
-
-```python
-from typing import Any
-import networkx as nx
-from networkx import Graph
-from netcenlib.centrality import CentralityService
-
-g: Graph = nx.karate_club_graph()
-centrality_service = CentralityService(g)
-centrality_centroid: dict[Any, float] = centrality_service.centroid
-```
-
-The biggest advantage of using `CentralityService` class is that it allows to compute all centralities at once. Users
-have all implementations within reach
 
 - invoking `compute_centrality` method of `CentralityService` class, which allows to compute centrality for a given
   centrality measure.
 
 ```python
+from typing import Any
 import networkx as nx
 from networkx import Graph
 
@@ -112,7 +111,8 @@ This method allows you not to directly specify centrality, making it easy to com
 
 ## Contributing
 
-For contributing, refer to its [CONTRIBUTING.md](CONTRIBUTING.md) file.
+For contributing, refer to its [CONTRIBUTING.md](.github/CONTRIBUTING.md) file.
+We are a welcoming community... just follow the [Code of Conduct](.github/CODE_OF_CONDUCT.md).
 
 ## Maintainers
 

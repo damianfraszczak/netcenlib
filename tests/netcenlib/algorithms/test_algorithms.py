@@ -29,10 +29,10 @@ ALGORITHM_NETWORK_TEST_CASES = {
         Centrality.CURRENT_FLOW_CLOSENESS,
         Centrality.DECAY,
         Centrality.DEGREE,
-        Centrality.DIFFUSION,
+        Centrality.DIFFUSION_DEGREE,
         Centrality.EIGENVECTOR,
         Centrality.ENTROPY,
-        Centrality.GEODESTIC,
+        Centrality.GEODESTIC_K_PATH,
         Centrality.HARMONIC,
         Centrality.HEATMAP,
         Centrality.KATZ,
@@ -57,9 +57,9 @@ ALGORITHM_NETWORK_TEST_CASES = {
         Centrality.CLOSENESS,
         Centrality.CORENESS,
         Centrality.DECAY,
-        Centrality.DIFFUSION,
+        Centrality.DIFFUSION_DEGREE,
         Centrality.ENTROPY,
-        Centrality.GEODESTIC,
+        Centrality.GEODESTIC_K_PATH,
         Centrality.HARMONIC,
         Centrality.HEATMAP,
         Centrality.KATZ,
@@ -107,9 +107,8 @@ def _convert_keys_to_strings(data):
 def _assert_dicts_with_precision(centrality, item1, item2, tol=0.0001):
     if isinstance(item1, dict) and isinstance(item2, dict):
         for key in item1:
-            assert (
-                key in item2
-            ), f"{centrality} - key {key} not found in both dictionaries"
+
+            assert key in item2, f"{centrality} - key {key} not found"
             _assert_dicts_with_precision(centrality, item1[key], item2[key], tol)
     elif isinstance(item1, (float, int)) and isinstance(item2, (float, int)):
         assert math.isclose(

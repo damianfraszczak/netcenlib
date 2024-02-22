@@ -1,3 +1,5 @@
+"""Algebraic centrality measure implementation."""
+
 import networkx as nx
 from networkx import Graph
 
@@ -7,6 +9,7 @@ def algebraic_centrality(
 ) -> dict[str, float]:
     """
     Compute the Algebraic Centrality for each node in the graph G.
+
     Ref:  https://www.centiserver.org/centrality/Algebraic_Centrality/
 
     :param network: NetworkX graph

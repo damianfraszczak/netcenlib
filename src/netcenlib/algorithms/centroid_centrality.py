@@ -8,6 +8,7 @@ from netcenlib.constants import INFINITY
 def centroid_centrality(network: Graph) -> dict[str, int]:
     """
     Compute the Centroid Centrality for each node in the graph G.
+
     Ref: https://www.centiserver.org/centrality/Centroid_value/
 
     :param network: NetworkX graph
