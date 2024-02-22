@@ -1,13 +1,16 @@
 import re
 from codecs import open
-from os import path, path
+from os import path
 
 from setuptools import find_packages, setup
+
+
 def read(*path_parts):
     """Retrieve content of a text file."""
     file_path = path.join(path.dirname(__file__), *path_parts)
     with open(file_path) as file_obj:
         return file_obj.read()
+
 
 def find_version(*path_parts):
     """Find the current version string."""

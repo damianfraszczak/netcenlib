@@ -1,4 +1,5 @@
 """Algebraic centrality measure implementation."""
+
 import networkx as nx
 from networkx import Graph
 
