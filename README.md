@@ -35,9 +35,9 @@ All custom implementations are provided under `netcenlib/algorithms` package. Ea
 - [Eigenvector](https://www.centiserver.org/centrality/Eigenvector_Centrality/)
 - [Entropy](https://www.centiserver.org/centrality/Entropy_Centrality/)
 - [Geodestic k path](https://www.centiserver.org/centrality/Geodesic_K-Path_Centrality/)
-- [Group Betweenness](https://www.centiserver.org/centrality/Group_Betweenness_Centrality/)
-- Group Closeness
-- Group Degree
+- [Group Betweenness Centrality](https://www.centiserver.org/centrality/Group_Betweenness_Centrality/) - `netcenlib.algorithms.group_betweenness_centrality`
+- [Group Closeness](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.centrality.group_closeness_centrality.html) - `netcenlib.algorithms.group_closeness_centrality`
+- [Group Degree](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.centrality.group_degree_centrality.html) - `netcenlib.algorithms.group_degree_centrality`
 - [Harmonic](https://www.centiserver.org/centrality/Harmonic_Centrality/)
 - [Heatmap](https://www.centiserver.org/centrality/Heatmap_Centrality/)
 - [Katz](https://www.centiserver.org/centrality/Katz_Centrality/)
@@ -56,7 +56,7 @@ All custom implementations are provided under `netcenlib/algorithms` package. Ea
 - [Semi Local](https://www.centiserver.org/centrality/Semi_Local_Centrality/)
 - [Subgraph](https://www.centiserver.org/centrality/Subgraph_Centrality/)
 - [Topological](https://www.centiserver.org/centrality/Topological_Coefficient/)
-- Trophic Levels
+- [Trophic Levels](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.centrality.trophic_levels.html) - `netcenlib.algorithms.trophic_levels_centrality`
 
 ## How to use
 Library can be installed using pip:

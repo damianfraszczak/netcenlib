@@ -11,6 +11,8 @@ Welcome to NetCenLib's documentation!
    :caption: Contents:
 
    Introduction <files/INTRODUCTION.md>
+   Quick start <files/QUICK_START.md>
+   Centrality measures <files/CENTRALITY_MEASURES.md>
    Contributing <files/CONTRIBUTING.md>
    Code of conduct <files/CODE_OF_CONDUCT.md>
    Reference <source/modules>
