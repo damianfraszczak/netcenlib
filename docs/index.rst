@@ -10,8 +10,9 @@ Welcome to NetCenLib's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   Introduction <files/introduction.md>
-   Contributing <files/contributing.md>
+   Introduction <files/INTRODUCTION.md>
+   Contributing <files/CONTRIBUTING.md>
+   Code of conduct <files/CODE_OF_CONDUCT.md>
    Reference <source/modules>
 
 
