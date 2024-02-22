@@ -22,7 +22,7 @@ project = "NetCenLib"
 author = "Damian Frąszczak, Edyta Frąszczak"
 copyright = f"{now.year}, {author}"
 release = __version__
-
+html_logo = "_static/logo.png"
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
