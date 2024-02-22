@@ -1,35 +1,31 @@
 """Centrality measures for networks."""
+
 import networkx as nx
 from networkx import Graph
 
-from netcenlib.algorithms.algebraic_centrality import algebraic_centrality
-from netcenlib.algorithms.average_distance_centrality import (
+from netcenlib.algorithms import (
+    algebraic_centrality,
     average_distance_centrality,
-)
-from netcenlib.algorithms.barycenter_centrality import barycenter_centrality
-from netcenlib.algorithms.bottle_neck_centrality import bottle_neck_centrality
-from netcenlib.algorithms.centroid_centrality import centroid_centrality
-from netcenlib.algorithms.cluster_rank_centrality import (
+    barycenter_centrality,
+    bottle_neck_centrality,
+    centroid_centrality,
     cluster_rank_centrality,
-)
-from netcenlib.algorithms.coreness_centrality import coreness_centrality
-from netcenlib.algorithms.decay_centrality import decay_centrality
-from netcenlib.algorithms.diffusion_degree_centrality import (
+    coreness_centrality,
+    decay_centrality,
     diffusion_degree_centrality,
-)
-from netcenlib.algorithms.entropy_centrality import entropy_centrality
-from netcenlib.algorithms.geodestic_k_path_centrality import (
+    entropy_centrality,
     geodestic_k_path_centrality,
+    heatmap_centrality,
+    hubbell_centrality,
+    leverage_centrality,
+    lin_centrality,
+    mnc_centrality,
+    pdi_centrality,
+    radiality_centrality,
+    rumor_centrality,
+    semi_local_centrality,
+    topological_centrality,
 )
-from netcenlib.algorithms.heatmap_centrality import heatmap_centrality
-from netcenlib.algorithms.leverage_centrality import leverage_centrality
-from netcenlib.algorithms.lin_centrality import lin_centrality
-from netcenlib.algorithms.mnc_centrality import mnc_centrality
-from netcenlib.algorithms.pdi_centrality import pdi_centrality
-from netcenlib.algorithms.radiality_centrality import radiality_centrality
-from netcenlib.algorithms.rumor_centrality import rumor_centrality
-from netcenlib.algorithms.semi_local_centrality import semi_local_centrality
-from netcenlib.algorithms.topological_centrality import topological_centrality
 from netcenlib.taxonomies import Centrality
 
 CENTRALITY_MAPPING = {
@@ -55,6 +51,7 @@ CENTRALITY_MAPPING = {
     Centrality.GROUP_CLOSENESS: nx.group_closeness_centrality,
     Centrality.GROUP_DEGREE: nx.group_degree_centrality,
     Centrality.HARMONIC: nx.harmonic_centrality,
+    Centrality.HUBBELL: hubbell_centrality,
     Centrality.HEATMAP: heatmap_centrality,
     Centrality.KATZ: nx.katz_centrality,
     Centrality.LAPLACIAN: nx.laplacian_centrality,
@@ -112,6 +109,10 @@ class CentralityService:
     @property
     def harmonic(self):
         return self.compute_centrality(Centrality.HARMONIC)
+
+    @property
+    def hubbell(self):
+        return self.compute_centrality(Centrality.HUBBELL)
 
     @property
     def load(self):

@@ -27,6 +27,7 @@ class Centrality(Enum):
     GROUP_DEGREE = "group_degree"
     HARMONIC = "harmonic"
     HEATMAP = "heatmap"
+    HUBBELL = "hubbell"
     KATZ = "katz"
     LAPLACIAN = "laplacian"
     LEVERAGE = "leverage"
