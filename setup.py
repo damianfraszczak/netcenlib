@@ -42,7 +42,11 @@ setup(
         "Programming Language :: Python :: 3",
     ],
     keywords="node_importance centrality_measures centrality complex-networks",
-    install_requires=read("requirements.txt").splitlines(),
+    install_requires=[
+        "networkx>=3.0",
+        "numpy",
+        "scipy",
+    ],
     long_description=read("README.md"),
     long_description_content_type="text/markdown",
     extras_require={
