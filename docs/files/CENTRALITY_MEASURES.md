@@ -1,9 +1,5 @@
 # Reference for Centrality Measures Documentation
 
-This document provides links to external references for each centrality measure implemented in the NetCenLib library, along with a guide to their corresponding module and function in the Sphinx documentation.
-
-## Implemented Centrality Measures:
-
 Below is a list of centrality measures implemented in the `netcenlib/algorithms` package, with external references and the naming convention for accessing them through our library.
 
 - [Algebraic Centrality](https://www.centiserver.org/centrality/Algebraic_Centrality/) - `netcenlib.algorithms.algebraic_centrality`

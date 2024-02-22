@@ -5,6 +5,7 @@ from networkx import Graph
 def semi_local_centrality(network: Graph) -> dict[str, float]:
     """
     Compute the Semi Local Centrality for each node in the graph G.
+
     Ref: https://www.centiserver.org/centrality/Semi_Local_Centrality/
 
     :param network: NetworkX graph

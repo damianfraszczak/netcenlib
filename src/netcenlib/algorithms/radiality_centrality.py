@@ -8,6 +8,7 @@ from netcenlib.constants import INFINITY
 def radiality_centrality(network: Graph) -> dict[str, float]:
     """
     Compute the Radiality Centrality for each node in the graph G.
+
     Ref: https://www.centiserver.org/centrality/Radiality_Centrality/
 
     :param network: NetworkX graph

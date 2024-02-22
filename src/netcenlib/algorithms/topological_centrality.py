@@ -5,6 +5,7 @@ from networkx import Graph
 def topological_centrality(network: Graph) -> dict[str, float]:
     """
     Compute the Topological Centrality for each node in the graph G.
+
     Ref: https://www.centiserver.org/centrality/Topological_Coefficient/
 
     :param network: NetworkX graph

@@ -6,6 +6,9 @@
 Welcome to NetCenLib's documentation!
 =====================================
 
+``NetCenLib`` (Network centrality library) is a tool to compute a wide range of centrality measures for a given network. The
+library is designed to work with Python Networkx library.
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
@@ -24,3 +27,6 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+.. _`Source`: https://github.com/damianfraszczak/netcenlib
+.. _`Distribution`: https://pypi.org/project/netcenlib/

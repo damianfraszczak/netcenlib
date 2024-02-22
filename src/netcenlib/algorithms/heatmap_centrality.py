@@ -6,6 +6,7 @@ from networkx import Graph
 def heatmap_centrality(network: Graph) -> dict[str, float]:
     """
     Compute the Heatmap Centrality for each node in the graph G.
+
     Ref: https://www.centiserver.org/centrality/Heatmap_Centrality/
 
     :param network: NetworkX graph

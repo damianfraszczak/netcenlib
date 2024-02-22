@@ -4,6 +4,7 @@ import networkx as nx
 def leverage_centrality(network: nx.Graph) -> dict[str, float]:
     """
     Compute the Leverage Centrality for each node in the graph G.
+
     Ref: https://www.centiserver.org/centrality/Leverage_Centrality/
 
     :param network: NetworkX graph

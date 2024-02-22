@@ -58,3 +58,7 @@ plt.title("Degree Centrality Visualization")
 plt.show()
 
 ```
+
+
+If you would like to test ``NetCenLib`` functionalities without installing it on your machine consider using the preconfigured [Jupyter notebook](netcenlib.ipynb).
+

@@ -9,6 +9,7 @@ def diffusion_degree_centrality(
 ) -> dict[str, float]:
     """
     Compute the Diffusion Degree Centrality for each node in the graph G.
+
     Ref: https://www.centiserver.org/centrality/Diffusion_Degree/
 
     :param network: NetworkX graph

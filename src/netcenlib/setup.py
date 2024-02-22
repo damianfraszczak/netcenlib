@@ -1,9 +1,13 @@
 import re
 from codecs import open
-from os import path, read
+from os import path, path
 
 from setuptools import find_packages, setup
-
+def read(*path_parts):
+    """Retrieve content of a text file."""
+    file_path = path.join(path.dirname(__file__), *path_parts)
+    with open(file_path) as file_obj:
+        return file_obj.read()
 
 def find_version(*path_parts):
     """Find the current version string."""
@@ -20,11 +24,12 @@ def find_version(*path_parts):
 
 
 here = path.abspath(path.dirname(__file__))
+root_dir = path.abspath(path.join(here, "..", ".."))
 
-with open(path.join(here, "README.md"), encoding="utf-8") as f:
+with open(path.join(root_dir, "README.md"), encoding="utf-8") as f:
     long_description = f.read()
 
-with open(path.join(here, "requirements.txt"), encoding="utf-8") as f:
+with open(path.join(root_dir, "requirements.txt"), encoding="utf-8") as f:
     requirements = f.read().splitlines()
 
 

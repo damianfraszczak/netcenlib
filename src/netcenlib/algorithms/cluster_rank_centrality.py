@@ -8,6 +8,7 @@ from netcenlib.constants import INFINITY
 def cluster_rank_centrality(network: Graph) -> dict[str, int]:
     """
     Compute the ClusterRank Centrality for each node in the graph G.
+
     Ref: https://www.centiserver.org/centrality/ClusterRank/
 
     :param network: NetworkX graph

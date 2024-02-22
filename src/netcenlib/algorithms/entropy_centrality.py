@@ -7,6 +7,7 @@ from netcenlib.common import nx_utils
 def entropy_centrality(network: nx.Graph) -> dict[str, float]:
     """
     Compute the Entropy Centrality for each node in the graph G.
+
     Ref: https://www.centiserver.org/centrality/Entropy_Centrality/
 
     :param network: NetworkX graph

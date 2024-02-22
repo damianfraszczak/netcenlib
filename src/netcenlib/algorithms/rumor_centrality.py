@@ -28,6 +28,7 @@ def _children_processed(tree: DiGraph, node: int, processed_nodes: List[int]) ->
 def rumor_centrality(network: Graph) -> dict[str, float]:
     """
     Compute the Rumor Centrality for each node in the graph G.
+
     Ref: https://www.centiserver.org/centrality/Rumor_Centrality/
 
     :param G: NetworkX graph

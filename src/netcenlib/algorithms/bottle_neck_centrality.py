@@ -6,6 +6,7 @@ from networkx import Graph
 def bottle_neck_centrality(graph: Graph) -> dict[str, float]:
     """
     Compute the BottleNeck Centrality for each node in the graph G.
+
     Ref: https://www.centiserver.org/centrality/BottleNeck/
 
     :param network: NetworkX graph

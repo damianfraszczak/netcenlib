@@ -8,6 +8,7 @@ def hubbell_centrality(
 ) -> dict[str, float]:
     """
     Compute the Hubbell Centrality for each node in the graph G.
+
     Ref: https://www.centiserver.org/?q1=centrality&q2=Hubbell_Index
 
     :param network: NetworkX graph
