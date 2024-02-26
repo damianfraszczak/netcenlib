@@ -107,7 +107,9 @@ g: Graph = nx.karate_club_graph()
 centrality_centroid: dict[Any, float] = compute_centrality(g, Centrality.CENTROID)
 ```
 
-This method allows you not to directly specify centrality, making it easy to compute different centralities in a loop.
+This method allows you not to directly specify centrality, making it easy to compute different centralises in a loop.
+
+For more examples and details, please refer to the [official documentation](https://netcenlib.readthedocs.io/en/latest/index.html).
 
 ## Contributing
 
