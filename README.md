@@ -3,6 +3,10 @@
 NetCenLib (Network centrality library) is a tool to compute a wide range of centrality measures for a given network. The
 library is designed to work with Python Networkx library.
 
+If you use _NetCenLib_ as support to your research consider citing:
+
+`D. Frąszczak, E. Frąszczak. NetCenLib: A comprehensive python library for network centrality analysis and evaluation. SoftwareX. 2024.` [DOI:10.1016/j.softx.2022.100988](https://doi.org/10.1016/j.softx.2024.101699)
+
 ## Overview
 
 The goal of NetCenLib is to offer a comprehensive repository for implementing a broad spectrum of centrality measures. Each
