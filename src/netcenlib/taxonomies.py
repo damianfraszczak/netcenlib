@@ -19,6 +19,7 @@ class Centrality(Enum):
     DECAY = "decay"
     DEGREE = "degree"
     DIFFUSION_DEGREE = "diffusion_degree"
+    ECCENTRICITY = "eccentricity"
     EIGENVECTOR = "eigenvector"
     ENTROPY = "entropy"
     GEODESTIC_K_PATH = "geodestic_k_path"

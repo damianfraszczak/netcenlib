@@ -37,6 +37,9 @@ from netcenlib.algorithms.decay_centrality import decay_centrality
 from netcenlib.algorithms.diffusion_degree_centrality import (
     diffusion_degree_centrality,
 )
+from netcenlib.algorithms.eccentricity_centrality import (
+    eccentricity_centrality,
+)
 from netcenlib.algorithms.entropy_centrality import entropy_centrality
 from netcenlib.algorithms.geodestic_k_path_centrality import (
     geodestic_k_path_centrality,

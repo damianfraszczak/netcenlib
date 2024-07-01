@@ -38,6 +38,7 @@ All custom implementations are provided under `netcenlib/algorithms` package. Ea
 - [Decay](https://www.centiserver.org/centrality/Decay_Centrality/)
 - [Degree](https://www.centiserver.org/centrality/Degree_Centrality/)
 - [Diffusion degree](https://www.centiserver.org/centrality/Diffusion_Degree/)
+- [Eccentricity](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.distance_measures.eccentricity.html)
 - [Eigenvector](https://www.centiserver.org/centrality/Eigenvector_Centrality/)
 - [Entropy](https://www.centiserver.org/centrality/Entropy_Centrality/)
 - [Geodestic k path](https://www.centiserver.org/centrality/Geodesic_K-Path_Centrality/)
