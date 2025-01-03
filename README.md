@@ -5,7 +5,7 @@ library is designed to work with Python Networkx library.
 
 If you use _NetCenLib_ as support to your research consider citing:
 
-`D. Frąszczak, E. Frąszczak. NetCenLib: A comprehensive python library for network centrality analysis and evaluation. SoftwareX. 2024.` [DOI:10.1016/j.softx.2022.100988](https://doi.org/10.1016/j.softx.2024.101699)
+`D. Frąszczak, E. Frąszczak. NetCenLib: A comprehensive python library for network centrality analysis and evaluation. SoftwareX. 2024.` [DOI:10.1016/j.softx.2024.101699](https://doi.org/10.1016/j.softx.2024.101699)
 
 [RG paper](https://www.researchgate.net/publication/380253577_NetCenLib_A_comprehensive_python_library_for_network_centrality_analysis_and_evaluation)
 
