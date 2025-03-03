@@ -12,6 +12,7 @@ A clear and concise description of what the problem is. Ex. I'm always frustrate
 
 **Reference.**
 In case of an algorithm/quality function/visualization:
+
 - the paper(s) in which the requested feature has been introduced,
 - an existing python implementation of the feature (if available)
 

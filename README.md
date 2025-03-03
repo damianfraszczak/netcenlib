@@ -21,7 +21,8 @@ these measures in the future.
 ## Code structure
 
 All custom implementations are provided under `netcenlib/algorithms` package. Each centrality measure is implemented in a separate file, named after the measure itself. Correspondingly, each file contains a function, named identically to the file, which calculates the centrality measure. This function accepts a NetworkX graph as input (and other params if applicable) and returns a dictionary, mapping nodes to their centrality values. Ultimately, every custom implementation is made available through the `netcenlib/algorithms` package.
-## Implemented centrality measures:
+
+## Implemented centrality measures
 
 - [Algebraic](https://www.centiserver.org/centrality/Algebraic_Centrality/)
 - [Average Distance](https://www.centiserver.org/centrality/Average_Distance/)
@@ -66,6 +67,7 @@ All custom implementations are provided under `netcenlib/algorithms` package. Ea
 - [Trophic Levels](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.centrality.trophic_levels.html)
 
 ## How to use
+
 Library can be installed using pip:
 
 ```bash
