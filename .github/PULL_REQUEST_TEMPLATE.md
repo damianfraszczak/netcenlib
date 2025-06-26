@@ -1,15 +1,15 @@
 # Pull Request Template
 
-
 ## Issue
 
 <!-- Put link to Github issue here. And also link any related PRs and Issues. -->
 
-https://github.com/damianfraszczak/netcenlib/issues/[ISSUE NUMBER HERE]
+<https://github.com/damianfraszczak/netcenlib/issues/[ISSUE_NUMBER_HERE]>
 
 ## Description of Changes
 
 Please provide a brief and concise description of what has been changed. Guidelines:
+
 - What has been changed?
 - Why were these changes necessary?
 - What problems do these changes solve?
@@ -17,6 +17,7 @@ Please provide a brief and concise description of what has been changed. Guideli
 ## Type of Changes
 
 Please mark the type(s) of changes made in this PR:
+
 - [ ] Bug fix
 - [ ] New feature
 - [ ] Performance optimization
@@ -28,6 +29,7 @@ Please mark the type(s) of changes made in this PR:
 ## Testing
 
 Describe how the changes have been tested. Guidelines:
+
 - What testing scenarios were performed?
 - Were the tests automated or manual?
 - What environment were the tests performed in?
