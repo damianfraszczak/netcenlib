@@ -1,5 +1,22 @@
 # NetCenLib
 
+
+<h1 align="center">
+    ⚔️ NetCenLib (Network centrality library) ⚔️
+</h1>
+
+<p align="center">
+    <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/netcenlib.svg">
+    <img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/netcenlib.svg" href="https://pepy.tech/project/netcenlib">
+    <a href="https://repology.org/project/python:netcenlib/versions">
+        <img src="https://repology.org/badge/tiny-repos/python:netcenlib.svg" alt="Packaging status">
+    </a>
+    <img alt="Downloads" src="https://pepy.tech/badge/netcenlib">
+    <img alt="GitHub license" src="https://img.shields.io/github/license/damianfraszczak/netcenlib.svg" href="https://github.com/damianfraszczak/netcenlib/blob/master/LICENSE">
+    <img alt="Documentation Status" src="https://readthedocs.org/projects/netcenlib/badge/?version=latest" href="https://netcenlib.readthedocs.io/en/latest/?badge=latest">
+</p>
+
+
 NetCenLib (Network centrality library) is a tool to compute a wide range of centrality measures for a given network. The
 library is designed to work with Python Networkx library.
 
@@ -8,6 +25,7 @@ If you use _NetCenLib_ as support to your research consider citing:
 `D. Frąszczak, E. Frąszczak. NetCenLib: A comprehensive python library for network centrality analysis and evaluation. SoftwareX. 2024.` [DOI:10.1016/j.softx.2024.101699](https://doi.org/10.1016/j.softx.2024.101699)
 
 [RG paper](https://www.researchgate.net/publication/380253577_NetCenLib_A_comprehensive_python_library_for_network_centrality_analysis_and_evaluation)
+
 
 ## Overview
 
