@@ -1,6 +1,3 @@
-# NetCenLib
-
-
 <h1 align="center">
     ⚔️ NetCenLib (Network centrality library) ⚔️
 </h1>
@@ -15,7 +12,6 @@
     <img alt="GitHub license" src="https://img.shields.io/github/license/damianfraszczak/netcenlib.svg" href="https://github.com/damianfraszczak/netcenlib/blob/master/LICENSE">
     <img alt="Documentation Status" src="https://readthedocs.org/projects/netcenlib/badge/?version=latest" href="https://netcenlib.readthedocs.io/en/latest/?badge=latest">
 </p>
-
 
 NetCenLib (Network centrality library) is a tool to compute a wide range of centrality measures for a given network. The
 library is designed to work with Python Networkx library.
